@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Concrete\Managers\ProductManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationRules\FluentValidation\ProductValidator.cs" />
   </ItemGroup>
@@ -55,10 +57,15 @@
       <Project>{e8103fdf-3bec-4867-9679-7263a0b7a5b8}</Project>
       <Name>DevFramework.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DevFramework.Northwind.DataAccess\DevFramework.Northwind.DataAccess.csproj">
+      <Project>{2315DDF4-AC1F-4D9A-B492-A1122EEABA40}</Project>
+      <Name>DevFramework.Northwind.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DevFramework.Northwind.Entities\DevFramework.Northwind.Entities.csproj">
       <Project>{9DBA090C-FFBF-4C9C-8845-859BC440444A}</Project>
       <Name>DevFramework.Northwind.Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
