@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.DataAccess;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
