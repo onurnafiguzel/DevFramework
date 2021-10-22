@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFramework.Core.Aspects.Postsharp
+namespace DevFramework.Core.Aspects.Postsharp.ValidationAspects
 {
     [Serializable] //Aspectler Compile time'da serileştirilip koda dahil olabilmesi gerekir. Tüm aspectlere eklenir.
     public class FluentValidationAspect : OnMethodBoundaryAspect
