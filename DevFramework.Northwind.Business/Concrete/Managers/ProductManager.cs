@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DevFramework.Core.Aspects.Postsharp;
 using DevFramework.Core.DataAccess;
+using System.Transactions;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -36,6 +37,24 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         public Product GetById(int id)
         {
             return _productDal.Get(p => p.ProductId == id);
+        }
+
+        public void TransactionalOperation(Product product1, Product product2)
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    _productDal.Add(product1);
+                    //Business Codes
+                    _productDal.Add(product2);
+                    scope.Complete();
+                }
+                catch
+                {
+                    scope.Dispose();
+                }
+            }
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
