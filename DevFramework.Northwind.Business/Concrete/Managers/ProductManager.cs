@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevFramework.Core.Aspects.Postsharp;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -20,7 +21,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _productDal = productDal;
         }
 
-        [FluentValidate(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);
@@ -36,7 +37,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             return _productDal.Get(p => p.ProductId == id);
         }
 
-        [FluentValidate(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator))]
         public Product Update(Product product)
         {
             return _productDal.Update(product);
