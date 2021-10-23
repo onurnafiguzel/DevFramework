@@ -16,6 +16,7 @@ using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
+using DevFramework.Core.Aspects.Postsharp.LogAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
