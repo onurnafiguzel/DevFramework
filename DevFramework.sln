@@ -11,9 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Business", "DevFramework.Northwind.Business\DevFramework.Northwind.Business.csproj", "{253F91E8-6A9E-4554-B47F-9D95CDEB2578}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Mvc.WebUI", "DevFramework.Northwind.Mvc.WebUI\DevFramework.Northwind.Mvc.WebUI.csproj", "{E09FADE1-DBE2-488B-9FEE-6D9A5913B851}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.MvcWebUI", "DevFramework.Northwind.Mvc.WebUI\DevFramework.Northwind.MvcWebUI.csproj", "{E09FADE1-DBE2-488B-9FEE-6D9A5913B851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Mvc.WebUI.Tests", "DevFramework.Northwind.Mvc.WebUI.Tests\DevFramework.Northwind.Mvc.WebUI.Tests.csproj", "{CDCFDE03-35CE-4C3B-8705-DC966FBA6C27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.MvcWebUI.Tests", "DevFramework.Northwind.Mvc.WebUI.Tests\DevFramework.Northwind.MvcWebUI.Tests.csproj", "{CDCFDE03-35CE-4C3B-8705-DC966FBA6C27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.WebApi", "DevFramework.Northwind.WebApi\DevFramework.Northwind.WebApi.csproj", "{D7641CF1-D838-4549-BD8B-FB21C1CD5014}"
 EndProject

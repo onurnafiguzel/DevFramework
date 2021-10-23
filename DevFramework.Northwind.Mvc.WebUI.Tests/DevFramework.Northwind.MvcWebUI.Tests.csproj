@@ -63,9 +63,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DevFramework.Northwind.Mvc.WebUI\DevFramework.Northwind.Mvc.WebUI.csproj">
+    <ProjectReference Include="..\DevFramework.Northwind.Mvc.WebUI\DevFramework.Northwind.MvcWebUI.csproj">
       <Project>{E09FADE1-DBE2-488B-9FEE-6D9A5913B851}</Project>
-      <Name>DevFramework.Northwind.Mvc.WebUI</Name>
+      <Name>DevFramework.Northwind.MvcWebUI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

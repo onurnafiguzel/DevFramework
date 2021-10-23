@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 {
+    [Serializable] // Burada gerek yok ancak hatayı gideriyor.
     public class LoggerService
     {
         private ILog _log;
