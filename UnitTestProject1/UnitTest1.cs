@@ -1,10 +1,11 @@
-using DevFramework.Northwind.DataAccess.Concrete.EntityFramework;
+﻿using DevFramework.Northwind.DataAccess.Concrete.EntityFramework;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
-namespace DevFramework.DataAccess.Tests.EntityFrameworkTests
+namespace UnitTestProject1
 {
     [TestClass]
-    public class EntityFrameworkTest
+    public class UnitTest1
     {
         [TestMethod]
         public void Get_all_returns_all_products()
