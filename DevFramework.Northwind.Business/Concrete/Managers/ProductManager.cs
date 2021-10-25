@@ -19,7 +19,7 @@ using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
-{    
+{
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
