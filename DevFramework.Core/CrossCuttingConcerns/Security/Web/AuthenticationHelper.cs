@@ -8,6 +8,7 @@ using System.Web.Security;
 
 namespace DevFramework.Core.CrossCuttingConcerns.Security.Web
 {
+    //Kullanıcı bilgilerini alıp onları şifreleyip Cooki'ye basar
     public class AuthenticationHelper
     {
         public static void CreateAuthCookie(Guid id, string userName, string email, DateTime expiration, string[] roles, bool rememberMe, string firstName, string lastName)
