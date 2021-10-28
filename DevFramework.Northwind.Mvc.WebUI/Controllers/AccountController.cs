@@ -26,7 +26,7 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             //    new Guid(), "onurguzel", "onur@gmail.com", DateTime.Now.AddDays(15), new[] { "Student" }, false, "Onur", "Güzel"); Hata veriyor, beklendiği gibi
             if (user != null)
             {
-                AuthenticationHelper.CreateAuthCookie(new Guid(), user.UserName, user.Email, DateTime.Now.AddDays(15), new[] { "Admin" }, false, user.FirstName, user.LastName);
+                AuthenticationHelper.CreateAuthCookie(new Guid(), user.UserName, user.Email, DateTime.Now.AddDays(15), _userService.GetUserRoles(user).Select(u => u.RoleName).ToArray(), false, user.FirstName, user.LastName);
                 return "User is authenticated!";
             }
             return "User is NOT authenticated!";
