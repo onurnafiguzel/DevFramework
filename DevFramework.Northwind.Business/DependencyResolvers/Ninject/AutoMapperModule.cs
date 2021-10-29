@@ -12,7 +12,7 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
     {
         public override void Load()
         {
-            Bind<IMapper>().ToConstant(CreateConfiguration().CreateMapper()); // New'lemeden bir kere oluşturuyor.
+            Bind<IMapper>().ToConstant(CreateConfiguration().CreateMapper()).InSingletonScope(); // New'lemeden bir kere oluşturuyor.
         }
         private MapperConfiguration CreateConfiguration()
         {
