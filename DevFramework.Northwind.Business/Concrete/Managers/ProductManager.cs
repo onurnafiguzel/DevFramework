@@ -20,6 +20,7 @@ using DevFramework.Core.Aspects.Postsharp.LogAspects;
 using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using System.Threading;
 using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
+using AutoMapper;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -46,14 +47,24 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             //Thread.Sleep(3000); Test amaçlı
             //Bu olay API'in serializable yapamaması ile alakalı EntityFramewowrk'te görülür. Nhibernate'te çıkmayna bir hatadır. Manuel Mapping olarak ta geçer. AutoMapper burayı otomatik yapar.
-            return _productDal.GetList().Select(p => new Product
+          
+            //return _productDal.GetList().Select(p => new Product
+            //{
+            //    CategoryId = p.CategoryId,
+            //    ProductId = p.ProductId,
+            //    ProductName = p.ProductName,
+            //    QuantityPerUnit = p.QuantityPerUnit,
+            //    UnitPrice = p.UnitPrice
+            //}).ToList();
+
+            Mapper.Initialize(c =>
             {
-                CategoryId = p.CategoryId,
-                ProductId = p.ProductId,
-                ProductName = p.ProductName,
-                QuantityPerUnit = p.QuantityPerUnit,
-                UnitPrice = p.UnitPrice
-            }).ToList();
+                c.CreateMap<Product, Product>();
+            });
+
+            List<Product> products = Mapper.Map<List<Product>, List<Product>>(_productDal.GetList());
+            return products;
+
         }
 
         public Product GetById(int id)
