@@ -28,10 +28,12 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        public IMapper _mapper { get; }
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal, IMapper mapper)
         {
             _productDal = productDal;
+            _mapper = mapper;
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
@@ -46,8 +48,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         //[SecuredOperation(Roles = "Admin,Editor,Student")]
         public List<Product> GetAll()
         {
-            var products = AutoMapperHelper.
-                MapToSameTypeList(_productDal.GetList()); //Aynı tiple çalıştığım için göndermeyebilirim.
+            var products = _mapper.Map<List<Product>>(_productDal.GetList());
             return products;
 
         }
