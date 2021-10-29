@@ -21,6 +21,7 @@ namespace DevFramework.Northwind.Business.DependencyResolvers.Ninject
                 cfg.AddProfiles(GetType().Assembly);
             });
             return config;
+            //Test
         }
     }
 }
