@@ -21,6 +21,7 @@ using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using System.Threading;
 using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using AutoMapper;
+using DevFramework.Core.Utilities.Mappings;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -45,24 +46,8 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         //[SecuredOperation(Roles = "Admin,Editor,Student")]
         public List<Product> GetAll()
         {
-            //Thread.Sleep(3000); Test amaçlı
-            //Bu olay API'in serializable yapamaması ile alakalı EntityFramewowrk'te görülür. Nhibernate'te çıkmayna bir hatadır. Manuel Mapping olarak ta geçer. AutoMapper burayı otomatik yapar.
-          
-            //return _productDal.GetList().Select(p => new Product
-            //{
-            //    CategoryId = p.CategoryId,
-            //    ProductId = p.ProductId,
-            //    ProductName = p.ProductName,
-            //    QuantityPerUnit = p.QuantityPerUnit,
-            //    UnitPrice = p.UnitPrice
-            //}).ToList();
-
-            Mapper.Initialize(c =>
-            {
-                c.CreateMap<Product, Product>();
-            });
-
-            List<Product> products = Mapper.Map<List<Product>, List<Product>>(_productDal.GetList());
+            var products = AutoMapperHelper.
+                MapToSameTypeList(_productDal.GetList()); //Aynı tiple çalıştığım için göndermeyebilirim.
             return products;
 
         }
