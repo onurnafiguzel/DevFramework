@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevFramework.Northwind.Business.Abstract;
+using DevFramework.Northwind.Business.DependencyResolvers.Ninject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -23,10 +25,13 @@ namespace DevFramework.Northwind.WebApi.MessageHandlers
                     string decodedString = Encoding.UTF8.GetString(data);
                     string[] tokenValues = decodedString.Split(':');
 
-                // https://www.base64encode.org adresinden "onur:12345 yaz, postman'e Authorization'ın value bölümüne ekle öyle send yap
-                    if (tokenValues[0] == "onur" & tokenValues[1] == "12345")
+                    IUserService userService = InstanceFactory.GetInstace<IUserService>();
+
+                    // https://www.base64encode.org adresinden "onur:12345 yaz, postman'e Authorization'ın value bölümüne ekle öyle send yap
+                    var user = userService.GetByUserNameAndPassword(tokenValues[0], tokenValues[1]);
+                    if (user != null)
                     {
-                        IPrincipal principal = new GenericPrincipal(new GenericIdentity(tokenValues[0]), new[] { "Admin" });
+                        IPrincipal principal = new GenericPrincipal(new GenericIdentity(tokenValues[0]), userService.GetUserRoles(user).Select(u => u.RoleName).ToArray());
                         Thread.CurrentPrincipal = principal; //Back-end'deki Identity set olur.
                         HttpContext.Current.User = principal; // Asp.Net için daha doğrusu Web API için.
                     }
