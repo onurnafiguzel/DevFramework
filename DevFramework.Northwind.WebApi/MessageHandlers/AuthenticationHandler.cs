@@ -23,6 +23,7 @@ namespace DevFramework.Northwind.WebApi.MessageHandlers
                     string decodedString = Encoding.UTF8.GetString(data);
                     string[] tokenValues = decodedString.Split(':');
 
+                // https://www.base64encode.org adresinden "onur:12345 yaz, postman'e Authorization'ın value bölümüne ekle öyle send yap
                     if (tokenValues[0] == "onur" & tokenValues[1] == "12345")
                     {
                         IPrincipal principal = new GenericPrincipal(new GenericIdentity(tokenValues[0]), new[] { "Admin" });
