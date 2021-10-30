@@ -20,6 +20,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "DevFramework.Northwind.WcfService", "DevFramework.Northwind.WcfService\DevFramework.Northwind.WcfService\", "{EE2B6B52-F6C6-4B04-B0D4-F554D98BB704}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{253f91e8-6a9e-4554-b47f-9d95cdeb2578}|DevFramework.Northwind.Business.dll;{E8103FDF-3BEC-4867-9679-7263A0B7A5B8}|DevFramework.Core.dll;{2315DDF4-AC1F-4D9A-B492-A1122EEABA40}|DevFramework.Northwind.DataAccess.dll;{9DBA090C-FFBF-4C9C-8845-859BC440444A}|DevFramework.Northwind.Entities.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_63600"
 		Debug.AspNetCompiler.PhysicalPath = "DevFramework.Northwind.WcfService\DevFramework.Northwind.WcfService\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63600\"
