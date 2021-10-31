@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.DataAccess.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Business.Tests", "UnitTestProject2\DevFramework.Northwind.Business.Tests.csproj", "{D6A83FEA-24BB-42D1-AD2B-434F6FAC5A24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.MvcAngularUI", "DevFramework.Northwind.MvcAngularUI\DevFramework.Northwind.MvcAngularUI.csproj", "{4AE022D0-690F-4272-8E78-B8CDF0F7010E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,10 @@ Global
 		{D6A83FEA-24BB-42D1-AD2B-434F6FAC5A24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6A83FEA-24BB-42D1-AD2B-434F6FAC5A24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6A83FEA-24BB-42D1-AD2B-434F6FAC5A24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE022D0-690F-4272-8E78-B8CDF0F7010E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE022D0-690F-4272-8E78-B8CDF0F7010E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE022D0-690F-4272-8E78-B8CDF0F7010E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE022D0-690F-4272-8E78-B8CDF0F7010E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
